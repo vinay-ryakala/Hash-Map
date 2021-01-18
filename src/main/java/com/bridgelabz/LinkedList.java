@@ -80,6 +80,14 @@ public class LinkedList<K>
       return tempNode;
    }
 
+   public void pop(INode<K> node) {
+      INode<K> tempNode = head;
+      while (tempNode.getNext() != node) {
+         tempNode = tempNode.getNext();
+      }
+      tempNode.setNext(node.getNext());
+   }
+
    public INode<K> popLast() {
       INode<K> tempNode = head;
       while (!tempNode.getNext().equals(tail)) {
